@@ -97,7 +97,7 @@ $(document).ready(function () {
   var trafficManagementInterconnect = L.layerGroup([trafficManagementInterconnectLayer]);
   
   var map = L.map('map', {
-      center: [33.768321, -118.1956168],
+      center: [33.782619, -118.167650],
       zoom: 14,
       layers: [cityFiberExisting, cityFiberProposed, trafficManagementInterconnectLayer, wilcon]
   });
