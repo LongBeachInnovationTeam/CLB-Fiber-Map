@@ -1,5 +1,15 @@
 $(document).ready(function () {
 
+  var wilconCustomLayer = L.geoJson(null, {
+    // http://leafletjs.com/reference.html#geojson-style
+    style: function(feature) {
+        return {
+            color: '#DB1507',
+            dashArray: [5, 5]
+        };
+    }
+  });
+  
   // The omnivore functions take three arguments:
   //
   // - a URL of the file to fetch
@@ -13,21 +23,13 @@ $(document).ready(function () {
   // with custom styles. These styles are the same as any styles you would
   // use with the default Leaflet API for L.geoJson, so read the documentation
   // at http://leafletjs.com/reference.html#geojson for the full details.
-  var wilconCustomLayer = L.geoJson(null, {
-      // http://leafletjs.com/reference.html#geojson-style
-      style: function(feature) {
-          return {
-              color: '#DB1507',
-              dashArray: [5, 5]
-          };
-      }
-  });
   var wilconLayer = omnivore.kml('data/WilconProposedBuildout.kml', null, wilconCustomLayer);
   var wilcon = L.layerGroup([wilconLayer]);  
   
   var cityExistingFiberOptions = {
-    // Filter out existing conduits without fiber
+    // http://leafletjs.com/reference.html#geojson-filter
     filter: function(feature, layer) {
+      // Filter out existing conduits without fiber
       if (feature.properties["TYPE"] !== 'Conduit') {
         switch(feature.properties["STATUS"]) {
           case 'Proposed': return false;
@@ -39,6 +41,7 @@ $(document).ready(function () {
         return false; 
       }
     },
+    // http://leafletjs.com/reference.html#geojson-style
     style: function(feature) {
       switch(feature.properties['STATUS']) {
         case 'Existing': return {
@@ -117,5 +120,26 @@ $(document).ready(function () {
     "Proposed Fiber (Wilcon)": wilconLayer,
   };
   L.control.layers(null, overlayMaps).addTo(map);
+  
+  // Add a legend
+  var legend = L.control({position: 'bottomright'});
+  legend.onAdd = function (map) {
+      var div = L.DomUtil.create('div', 'info legend');
+      div.innerHTML +=
+        '<hr style="border-top: 4px solid #17B9D9;" />' +
+        'Existing Fiber' + '<br>';
+      div.innerHTML +=
+        '<hr style="border-top: 4px dotted #17B9D9;" />' +
+        'Proposed Fiber' + '<br>';
+      div.innerHTML +=
+        '<hr style="border-top: 4px solid #136194;" />' +
+        'Existing Fiber (Traffic Management Interconnect)' + '<br>';
+      div.innerHTML +=
+        '<hr style="border-top: 4px dotted #DB1507;" />' +
+        'Proposed Fiber (Wilcon)' + '<br>';
+      return div;
+  };
+  legend.addTo(map);
+ 
   
 });
