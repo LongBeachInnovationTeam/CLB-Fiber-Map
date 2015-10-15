@@ -103,7 +103,8 @@ $(document).ready(function () {
   var map = L.map('map', {
       center: [33.782619, -118.167650],
       zoom: 14,
-      layers: [cityFiberExisting, cityFiberProposed, trafficManagementInterconnectLayer, wilcon]
+      layers: [cityFiberExisting, cityFiberProposed, trafficManagementInterconnectLayer, wilcon],
+      scrollWheelZoom: false
   });
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
