@@ -1,7 +1,12 @@
-<html>
+<html lang="en">
     <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <title>CLB: Fiber Map</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300|Raleway:400,500,700' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" href="style.css" />
       <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
       <script src="//cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
@@ -11,6 +16,74 @@
       <script src="map.js"></script>
     </head>
     <body>
-       <div id="map"></div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <div id="content">
+              <h1 class="text-center">City of Long Beach: Fiber Project Map</h1>
+              <hr />
+              <p class="background-text">
+                The Innovation Team (i-team), the Technology &amp; Innovation Department (TID), and Public Works
+                are in the process of developing a "master plan" to invest in the City's high tech infrastructure
+                to promote economic, social, civic, and workforce development.
+              </p>
+              <p class="background-text">
+                Strategic use and maximization of City assets will result in increased investment and quality
+                internet access for businesses and residents.
+              </p>
+              <p class="background-text">
+                Displayed is a visual map of the City's current fiber optic assets, proposed expansions, as
+                well as buildout proposals from vendors like Wilcon.
+              </p>
+              <hr />
+              <h2 class="text-center">Stay Connected!</h2>
+              <p class="signup-text">Subscribe to our mailing list to receive news of future developments.</p>
+              <!-- Begin MailChimp Signup Form -->
+              <div id="mc_embed_signup">
+                <form action="//longbeach.us11.list-manage.com/subscribe/post?u=99b02f7c1cb871c45f9dc6400&amp;id=a5203e7ba6"
+                      method="post" id="mc-embedded-subscribe-form"
+                      name="mc-embedded-subscribe-form"
+                      class="validate"
+                      target="_blank" novalidate>
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <div class="mc-field-group form-group">
+                        <label for="mce-FNAME">FIRST NAME</label>
+                        <input type="text" value="" name="FNAME" class="form-control" id="mce-FNAME">
+                      </div>
+                    </div>
+                    <div class="col-xs-6">
+                      <div class="mc-field-group form-group">
+                        <label for="mce-LNAME">LAST NAME</label>
+                        <input type="text" value="" name="LNAME" class="form-control" id="mce-LNAME">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="mc-field-group form-group">
+                          <label for="mce-EMAIL">EMAIL ADDRESS</label>
+                          <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL">
+                      </div>
+                      <div id="mce-responses" class="clear">
+                          <div class="response" id="mce-error-response" style="display:none"></div>
+                          <div class="response" id="mce-success-response" style="display:none"></div>
+                      </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                      <div style="position: absolute; left: -5000px;"><input type="text" name="b_99b02f7c1cb871c45f9dc6400_a5203e7ba6" tabindex="-1" value=""></div>
+                      <div class="clear">
+                        <input type="submit" value="SUBSCRIBE" name="subscribe" id="mc-embedded-subscribe" class="btn btn-submit btn-block">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <hr />
+            </div>          
+          </div>
+          <div class="col-md-8">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
     </body>
 </html>
