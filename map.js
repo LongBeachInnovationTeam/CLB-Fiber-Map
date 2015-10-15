@@ -44,9 +44,10 @@ $(document).ready(function () {
     // http://leafletjs.com/reference.html#geojson-style
     style: function(feature) {
       switch(feature.properties['STATUS']) {
-        case 'Existing': return {
-          color: "#17B9D9"
-        };
+        case 'Existing':
+          return {
+            color: "#17B9D9"
+          };
       }
     }
   };
@@ -126,20 +127,103 @@ $(document).ready(function () {
   legend.onAdd = function (map) {
       var div = L.DomUtil.create('div', 'info legend');
       div.innerHTML +=
-        '<hr style="border-top: 4px solid #17B9D9;" />' +
-        'Existing Fiber' + '<br>';
+        '<span id="existing-fiber-legend-item"><hr style="border-top: 4px solid #17B9D9;" />' +
+        'Existing Fiber' + '</span><br>';
       div.innerHTML +=
-        '<hr style="border-top: 4px dotted #17B9D9;" />' +
-        'Proposed Fiber' + '<br>';
+        '<span id="proposed-fiber-legend-item"><hr style="border-top: 4px dotted #17B9D9;" />' +
+        'Proposed Fiber' + '</span><br>';
       div.innerHTML +=
-        '<hr style="border-top: 4px solid #136194;" />' +
-        'Existing Fiber (Traffic Management Interconnect)' + '<br>';
+        '<span id="existing-fiber-tmi-legend-item"><hr style="border-top: 4px solid #136194;" />' +
+        'Existing Fiber (Traffic Management Interconnect)' + '</span><br>';
       div.innerHTML +=
-        '<hr style="border-top: 4px dotted #DB1507;" />' +
-        'Proposed Fiber (Wilcon)' + '<br>';
+        '<span id="wilcon-legend-item"><hr style="border-top: 4px dotted #DB1507;" />' +
+        'Proposed Fiber (Wilcon)' + '</span><br>';
       return div;
   };
   legend.addTo(map);
+
+    
+  function activateLegendItem(layerName) {
+    switch(layerName) {
+      case 'Existing Fiber':
+        $("#existing-fiber-legend-item hr").css({
+          "border-top": "4px solid #17B9D9"
+        });
+        $("#existing-fiber-legend-item").css({
+          "color": "#555"
+        });
+        break;
+      case 'Proposed Fiber':
+        $("#proposed-fiber-legend-item hr").css({
+          "border-top": "4px dotted #17B9D9"
+        });
+        $("#proposed-fiber-legend-item").css({
+          "color": "#555"
+        });
+        break;
+      case 'Existing Fiber (Traffic Management Interconnect)':
+        $("#existing-fiber-tmi-legend-item hr").css({
+          "border-top": "4px solid #136194"
+        });
+        $("#existing-fiber-tmi-legend-item").css({
+          "color": "#555"
+        });        
+        break;
+      case 'Proposed Fiber (Wilcon)':
+        $("#wilcon-legend-item hr").css({
+          "border-top": "4px dotted #DB1507"
+        });
+        $("#wilcon-legend-item").css({
+          "color": "#555"
+        });
+        break;
+    }
+  }
+  
+  function disableLegendItem(layerName) {
+    switch(layerName) {
+      case 'Existing Fiber':
+        $("#existing-fiber-legend-item hr").css({
+          "border-top": "4px solid #768087"
+        });
+        $("#existing-fiber-legend-item").css({
+          "color": "#768087"
+        });
+        break;
+      case 'Proposed Fiber':
+        $("#proposed-fiber-legend-item hr").css({
+          "border-top": "4px dotted #768087"
+        });
+        $("#proposed-fiber-legend-item").css({
+          "color": "#768087"
+        });        
+        break;
+      case 'Existing Fiber (Traffic Management Interconnect)':
+        $("#existing-fiber-tmi-legend-item hr").css({
+          "border-top": "4px solid #768087"
+        });
+        $("#existing-fiber-tmi-legend-item").css({
+          "color": "#768087"
+        });        
+        break;
+      case 'Proposed Fiber (Wilcon)':
+        $("#wilcon-legend-item hr").css({
+          "border-top": "4px dotted #768087"
+        });
+        $("#wilcon-legend-item").css({
+          "color": "#768087"
+        });        
+        break;
+    }
+  }
+  
+  map.on('overlayadd', function(e) {
+    activateLegendItem(e.name);
+  });
+  
+  map.on('overlayremove', function(e) {
+    disableLegendItem(e.name);
+  });
  
   
 });
