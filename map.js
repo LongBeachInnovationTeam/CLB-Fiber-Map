@@ -1,3 +1,13 @@
+var resizeMap = function() {
+  var h = $("#left-content").height();
+  $("#map").height(h);
+}
+
+$(window).resize(function() {
+  resizeMap();
+});
+
+
 $(document).ready(function () {
 
   var wilconCustomLayer = L.geoJson(null, {
@@ -107,6 +117,7 @@ $(document).ready(function () {
       scrollWheelZoom: false
   });
 
+
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
       maxZoom: 18,
@@ -122,6 +133,8 @@ $(document).ready(function () {
     "Proposed Fiber (Wilcon)": wilconLayer,
   };
   L.control.layers(null, overlayMaps).addTo(map);
+  
+  resizeMap();
   
   // Add a legend
   var legend = L.control({position: 'bottomright'});
@@ -142,7 +155,6 @@ $(document).ready(function () {
       return div;
   };
   legend.addTo(map);
-
     
   function activateLegendItem(layerName) {
     switch(layerName) {
