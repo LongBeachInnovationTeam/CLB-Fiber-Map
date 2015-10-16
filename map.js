@@ -114,7 +114,11 @@ $(document).ready(function () {
       center: [33.782619, -118.167650],
       zoom: 14,
       layers: [cityFiberExisting, cityFiberProposed, trafficManagementInterconnectLayer, wilcon],
-      scrollWheelZoom: false
+      scrollWheelZoom: false,
+      fullscreenControl: true,
+      fullscreenControlOptions: {
+        position: 'topleft'
+      }
   });
 
 
