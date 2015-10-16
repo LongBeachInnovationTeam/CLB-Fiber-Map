@@ -7,7 +7,6 @@ $(window).resize(function() {
   resizeMap();
 });
 
-
 $(document).ready(function () {
 
   var wilconCustomLayer = L.geoJson(null, {
