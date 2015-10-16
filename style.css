@@ -1,6 +1,10 @@
+/* HTML elements */
 body {
+/*
   background: #136194;
   color: #ecf0f1;
+*/
+  color: #130f30;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -9,14 +13,36 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
+/* Title row */
+#title-row {
+  background: #17B9D9;
+  color: #fff;
+}
+
+/* Content */
+#left-content {
+  margin-top: 25px;
+}
+
 .background-text {
   font-size: 20px;
+}
+
+.btn-submit {
+  background: #17B9D9;
+  border-color: #17B9D9;
+  color: #fff;
+}
+
+#mc_embed_signup {
+  margin-top: 20px;
 }
 
 .signup-text {
   font-size: 16px;
 }
 
+/* Leaflet map */
 #map {
   height: 100%;
 }
@@ -29,15 +55,6 @@ h1, h2, h3, h4, h5, h6 {
 .leaflet-container {
   margin-bottom: 25px;
   box-shadow: 0 1px 5px rgba(0,0,0,0.65);
-}
-
-.btn-submit {
-  background: #17B9D9;
-  border-color: #17B9D9;
-}
-
-#mc_embed_signup {
-  margin-top: 20px;
 }
 
 .legend {
@@ -57,4 +74,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0 !important;
   margin-right: 8px;
   opacity: 0.7;
+}
+
+/* Comments */
+#comment-row {
+  color: #fff;
+  background: #0A324C;
 }

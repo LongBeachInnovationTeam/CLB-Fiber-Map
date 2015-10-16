@@ -17,11 +17,18 @@
     </head>
     <body>
       <div class="container-fluid">
+        <div id="title-row" class="row">
+          <div class="col-xs-12">
+            <h1 class="text-center">City of Long Beach: Fiber Project Map</h1>
+          </div>
+        </div>
         <div class="row">
           <div class="col-md-4">
             <div id="left-content">
+<!--
               <h1 class="text-center">City of Long Beach: Fiber Project Map</h1>
               <hr />
+-->
               <p class="background-text">
                 The Innovation Team (i-team), the Technology &amp; Innovation Department (TID), and Public Works
                 are in the process of developing a "master plan" to invest in the City's high tech infrastructure
@@ -37,7 +44,7 @@
               </p>
               <hr />
               <h2 class="text-center">Stay Connected!</h2>
-              <p class="signup-text">Subscribe to our mailing list to receive news of future developments.</p>
+              <p class="signup-text text-center">Subscribe to our mailing list to receive news of future developments.</p>
               <!-- Begin MailChimp Signup Form -->
               <div id="mc_embed_signup">
                 <form action="//longbeach.us11.list-manage.com/subscribe/post?u=99b02f7c1cb871c45f9dc6400&amp;id=a5203e7ba6"
@@ -88,6 +95,35 @@
               </div>
           </div>
         </div>
+        <div id="comment-row" class="row">
+          <div class="col-xs-12">
+            <h3>Comment</h3>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES * * */
+                var disqus_shortname = 'clbfibermap';
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </div>
+        </div>
       </div>
+      <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'clbfibermap';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.type = 'text/javascript';
+          s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+      </script>
     </body>
 </html>
