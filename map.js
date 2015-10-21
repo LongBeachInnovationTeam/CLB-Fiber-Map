@@ -8,33 +8,8 @@ $(window).resize(function() {
 });
 
 $(document).ready(function () {
-
-  var wilconCustomLayer = L.geoJson(null, {
-    // http://leafletjs.com/reference.html#geojson-style
-    style: function(feature) {
-        return {
-            color: '#DB1507',
-            dashArray: [5, 5]
-        };
-    }
-  });
-  
-  // The omnivore functions take three arguments:
-  //
-  // - a URL of the file to fetch
-  // - options to the parser
-  // - a custom layer
-  //
-  // And they return the custom layer, which is by default an L.geoJson layer.
-  //
-  // The second two arguments are each optional. In this case we're supplying
-  // no arguments to the parser (null), but supplying a custom layer
-  // with custom styles. These styles are the same as any styles you would
-  // use with the default Leaflet API for L.geoJson, so read the documentation
-  // at http://leafletjs.com/reference.html#geojson for the full details.
-  var wilconLayer = omnivore.kml('data/WilconProposedBuildout.kml', null, wilconCustomLayer);
-  var wilcon = L.layerGroup([wilconLayer]);  
-  
+   
+   
   var cityExistingFiberOptions = {
     // http://leafletjs.com/reference.html#geojson-filter
     filter: function(feature, layer) {
@@ -112,7 +87,7 @@ $(document).ready(function () {
   var map = L.map('map', {
       center: [33.782619, -118.167650],
       zoom: 14,
-      layers: [cityFiberExisting, cityFiberProposed, trafficManagementInterconnectLayer, wilcon],
+      layers: [cityFiberExisting, cityFiberProposed, trafficManagementInterconnectLayer],
       scrollWheelZoom: false,
       fullscreenControl: true,
       fullscreenControlOptions: {
@@ -132,8 +107,7 @@ $(document).ready(function () {
   var overlayMaps = {
     "Existing Fiber": cityFiberExisting,
     "Proposed Fiber": cityFiberProposed,
-    "Existing Fiber (Traffic Management Interconnect)": trafficManagementInterconnectLayer,
-    "Proposed Fiber (Wilcon)": wilconLayer,
+    "Existing Fiber (Traffic Management Interconnect)": trafficManagementInterconnectLayer
   };
   L.control.layers(null, overlayMaps).addTo(map);
   
@@ -152,9 +126,6 @@ $(document).ready(function () {
       div.innerHTML +=
         '<span id="existing-fiber-tmi-legend-item"><hr style="border-top: 4px solid #136194;" />' +
         'Existing Fiber (Traffic Management Interconnect)' + '</span><br>';
-      div.innerHTML +=
-        '<span id="wilcon-legend-item"><hr style="border-top: 4px dotted #DB1507;" />' +
-        'Proposed Fiber (Wilcon)' + '</span><br>';
       return div;
   };
   legend.addTo(map);
@@ -185,14 +156,6 @@ $(document).ready(function () {
           "color": "#555"
         });        
         break;
-      case 'Proposed Fiber (Wilcon)':
-        $("#wilcon-legend-item hr").css({
-          "border-top": "4px dotted #DB1507"
-        });
-        $("#wilcon-legend-item").css({
-          "color": "#555"
-        });
-        break;
     }
   }
   
@@ -219,14 +182,6 @@ $(document).ready(function () {
           "border-top": "4px solid #768087"
         });
         $("#existing-fiber-tmi-legend-item").css({
-          "color": "#768087"
-        });        
-        break;
-      case 'Proposed Fiber (Wilcon)':
-        $("#wilcon-legend-item hr").css({
-          "border-top": "4px dotted #768087"
-        });
-        $("#wilcon-legend-item").css({
           "color": "#768087"
         });        
         break;
