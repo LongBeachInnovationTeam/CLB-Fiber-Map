@@ -1,54 +1,169 @@
+<!DOCTYPE html>
 <html lang="en">
+  
     <head>
+      
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-      <title>CLB: Fiber Map</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      
+      <title>CLB - Fiber Map</title>
+      
+      <!-- Stylesheets -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/styles.min.css">
       <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.5/leaflet.css">
       <link rel="stylesheet" href="leaflet.fullscreen-1.1.4/Control.FullScreen.css">
-      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300|Raleway:400,500,700' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="style.css" />
-      <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-      <script src="//cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
-      <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
-      <script src="catiline.js"></script>
-      <script src="leaflet.shpfile.js"></script>
-       <script src="leaflet.fullscreen-1.1.4/Control.FullScreen.js"></script>
-      <script src="map.js"></script>
+      
+      <!-- Custom Fonts -->
+      <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+      <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700|Raleway:400,500,700' type='text/css'>
+      
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      
     </head>
-    <body>
-      <div class="container-fluid">
-        <div id="title-row" class="row">
-          <div class="col-xs-12">
-            <h1 class="text-center">City of Long Beach: Fiber Project Map</h1>
+  
+    <body id="page-top" class="index">
+      
+      <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header page-scroll">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand page-scroll" href="#page-top">
+                    <img src="img/long_beach_logo_white.png" width="140" height="30">
+                  </a>
+              </div>
+            
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="hidden">
+                    <a href="#page-top"></a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="#about">About</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="#map-section">Fiber Map</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="#stay-connected">Stay Connected</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="#comment">Comment</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+            
+          </div>
+          <!-- /.container-fluid -->
+      </nav>
+
+      <!-- Header -->
+      <header>
+        <div class="container">
+          <div class="intro-text">
+            <div class="intro-lead-in">CITY OF LONG BEACH</div>
+            <div class="intro-heading">HIGH TECH INFRASTRUCTURE PLAN</div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div id="left-content">
-              <p class="background-text">
-                The Innovation Team (i-team), the Technology &amp; Innovation Department (TID), and Public Works
-                are in the process of developing a "master plan" to invest in the City's high tech infrastructure
-                to promote economic, social, civic, and workforce development.
+      </header>
+      
+      <section id="about">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">About</h2>
+            </div>
+          </div>
+          <div class="row text-center content-row">
+            <div class="col-md-12">
+              <p class="intro-text">
+                The <strong>Innovation Team</strong> (i-team), the <strong>Technology &amp; Innovation Department</strong> (TID),
+                and <strong>Public Works</strong> are in the process of developing a "master plan" to invest in the City's high
+                tech infrastructure to promote economic, social, civic, and workforce development.
               </p>
-              <p class="background-text">
-                Strategic use and maximization of City assets will result in increased investment and quality
-                internet access for businesses and residents.
-              </p>
-              <p class="background-text">
-                Displayed is a visual map of the City's current fiber optic assets, proposed expansions, and
-                local Internet Service Providers (coming soon).
-              </p>
-              <p class="background-text">
-                Subscribe to our mailing list and comment below to let us know your thoughts on how the
-                City of Long Beach should use its fiber optic assets.
-              </p>
+            </div>
+          </div>
+          <div class="row content-row">
+            <div class="col-lg-12">
               <hr />
-              <h2 class="text-center">Stay Connected!</h2>
-              <p class="signup-text">Subscribe to our mailing list to receive news of future developments.</p>
+            </div>
+          </div>
+          <div class="row text-center content-row">
+            <div class="col-md-4">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-wifi fa-stack-1x fa-inverse"></i>
+              </span>
+              <p class="text-muted description-text">
+                Strategic use and maximization of City assets will result in increased investment and quality internet access for businesses and residents.
+              </p>
+            </div>
+            <div class="col-md-4">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+              </span>
+              <p class="text-muted description-text">
+                Displayed below is a visual map of the City's current fiber optic assets, proposed expansions, and local Internet Service Providers (coming soon).
+              </p>
+            </div>
+            <div class="col-md-4">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+              </span>
+              <p class="text-muted description-text">
+                Subscribe to our mailing list and comment below to let us know your thoughts on how the City of Long Beach should use its fiber optic assets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section id="map-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">Fiber Project Map</h2>
+            </div>
+          </div>
+          <div class="row content-row">
+            <div class="col-lg-12">
+              <div id="map"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="stay-connected">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">Stay Connected</h2>
+              <h3 class="section-subheading text-muted">
+                Subscribe to our mailing list to receive news of future developments.
+              </h3>
+            </div>
+          </div>
+          <div class="row content-row">
+            <div class="col-lg-12">     
               <!-- Begin MailChimp Signup Form -->
-              <div id="mc_embed_signup">
+              <div id="mc_embed_signup" class="form-wrapper">
                 <form action="//longbeach.us11.list-manage.com/subscribe/post?u=99b02f7c1cb871c45f9dc6400&amp;id=a5203e7ba6"
                       method="post" id="mc-embedded-subscribe-form"
                       name="mc-embedded-subscribe-form"
@@ -71,7 +186,7 @@
                   <div class="row">
                     <div class="col-xs-12">
                       <div class="mc-field-group form-group">
-                          <label for="mce-EMAIL">EMAIL ADDRESS</label>
+                          <label for="mce-EMAIL">EMAIL</label>
                           <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL">
                       </div>
                       <div id="mce-responses" class="clear">
@@ -81,40 +196,92 @@
                       <div style="position: absolute; left: -5000px;">
                         <input type="text" name="b_99b02f7c1cb871c45f9dc6400_a5203e7ba6" tabindex="-1" value="">
                       </div>
-                      <div class="clear">
-                        <input type="submit" value="SUBSCRIBE" name="subscribe" id="mc-embedded-subscribe" class="btn btn-submit btn-block">
+                      <div class="clearfix"></div>
+                      <div class="col-lg-12 text-center">
+                        <div class="clear">
+                          <div id="success"></div>
+                          <input type="submit" value="SUBSCRIBE" name="subscribe" id="mc-embedded-subscribe" class="btn btn-xl">
+                        </div>
                       </div>
                     </div>
                   </div>
                 </form>
               </div>
-              <hr />
             </div>
-          </div>  
-          <div class="col-md-8">
-              <div id="right-content">
-                <div id="map"></div>
-              </div>
           </div>
         </div>
-        <div id="comment-row" class="row">
-          <div class="col-xs-12">
-            <h3>Comment</h3>
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-                /* * * CONFIGURATION VARIABLES * * */
-                var disqus_shortname = 'clbfibermap';
-                /* * * DON'T EDIT BELOW THIS LINE * * */
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      </section>
+      
+      <section id="comment" class="bg-secondary">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h2 class="section-heading">Comment</h2>
             </div>
+          </div>
+          <div class="row content-row">
+            <div class="col-md-12">
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                  /* * * CONFIGURATION VARIABLES * * */
+                  var disqus_shortname = 'clbfibermap';
+                  /* * * DON'T EDIT BELOW THIS LINE * * */
+                  (function() {
+                      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                  })();
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+            
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <span class="copyright">Long Beach i-team</span>
+            </div>
+            <div class="col-md-4">
+              <ul class="list-inline social-buttons">
+                <li><a href="https://twitter.com/iteam_LongBeach/"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.facebook.com/iteamLB"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://instagram.com/iteam_lbc/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://github.com/LongBeachInnovationTeam"><i class="fa fa-github"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul class="list-inline quicklinks">
+                <li><a href="http://longbeach.gov/">City of Long Beach Website</a></li>
+                <li><a href="http://longbeach.gov/iteam/">i-team Website</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+      <!-- jQuery -->
+      <script src="js/jquery.js"></script>
+      
+      <!-- Bootstrap Core JavaScript -->
+      <script src="js/bootstrap.min.js"></script>
+      
+      <!-- Plugin JavaScript -->
+      <script src="js/jquery.easing.1.3.js"></script>
+      <script src="js/classie.js"></script>
+      <script src="js/cbpAnimatedHeader.js"></script>
+      
+      <!-- Map JavaScript -->
+      <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+      <script src='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+      <script src="catiline.js"></script>
+      <script src="leaflet.shpfile.js"></script>
+      <script src="leaflet.fullscreen-1.1.4/Control.FullScreen.js"></script>
+      <script src="map.js"></script>
+      
+      <!-- Comment Form JavaScript -->
       <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES * * */
         var disqus_shortname = 'clbfibermap';
@@ -126,5 +293,10 @@
           (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
         }());
       </script>
+      
+      <!-- Custom Theme JavaScript -->
+      <script src="js/agency.js"></script>
+      
     </body>
+  
 </html>
