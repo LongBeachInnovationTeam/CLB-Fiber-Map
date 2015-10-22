@@ -35,7 +35,7 @@ $(document).ready(function () {
       }
     }
   };
-  var cityFiberExistingLayer = new L.Shapefile('data/FiberLines.zip', cityExistingFiberOptions);
+  var cityFiberExistingLayer = new L.Shapefile('../data/FiberLines.zip', cityExistingFiberOptions);
   var cityFiberExisting = L.layerGroup([cityFiberExistingLayer]);
   
   var cityProposedFiberOptions = {
